@@ -1,0 +1,24 @@
+sfinal: 
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  left_steering_controller: 
+    type: effort_controllers/JointPositionController
+    joint: Peg_L_Joint
+    pid : {p: 100.0 , i: 1 , d: 10}
+
+  right_steering_controller: 
+    type: effort_controllers/JointPositionController
+    joint: Peg_R_Joint
+    pid : {p: 100.0 , i: 1 , d: 10}
+
+  back_left_wheel_controller: 
+    type: effort_controllers/JointEffortController
+    joint: Back_Wheel_L_Joint
+    pid : {p: 100.0 , i: 10.0 , d: 5.0}
+    
+  back_right_wheel_controller: 
+    type: effort_controllers/JointEffortController
+    joint: Back_Wheel_R_Joint
+    pid : {p: 100.0 , i: 10.0 , d: 5.0}
